@@ -1,0 +1,12 @@
+mapred.exam01
+
+WordCountMapperExam
+WordCountReducerExam
+WordCountDriverExam
+
+	=> mapred.basic과 동일한 작업을 수행
+		5글자이상인 문자열만 빈도수 구하기
+		
+	=> /input/README.txt파일을 이용
+	=> output
+		/mywork/wordcount_exam
