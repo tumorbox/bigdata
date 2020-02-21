@@ -12,26 +12,25 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-
 public class AirDriver {
 
-	public static void main(String[] args)  throws IOException, ClassNotFoundException, InterruptedException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 		Configuration conf = new Configuration();
 		Job job = new Job(conf, "Air");
-		
+
 		job.setMapperClass(AirMapper.class);
-		job.setReducerClass(AriReducer.class);
+		job.setReducerClass(AirReducer.class);
 		job.setJarByClass(AirDriver.class);
-		
+
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
-		
+
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
-		
+
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
-		
+
 		job.waitForCompletion(true);
 
 	}

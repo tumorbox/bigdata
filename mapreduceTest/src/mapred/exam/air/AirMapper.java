@@ -20,7 +20,7 @@ public class AirMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 				
 				if (!line[15].equals("NA")) {
 					if (Double.parseDouble(line[15]) > 0) {
-						outputKey.set(line[1]);
+						outputKey.set(line[1]+"월");
 						context.write(outputKey, outputVal);
 					}
 				}

@@ -6,7 +6,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class AriReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
+public class AirReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
 	IntWritable resultVal = new IntWritable();
 
 	@Override
